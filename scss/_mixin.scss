@@ -1,0 +1,22 @@
+@mixin style-h3($fondo,$color,$fontSize,$fontWeight){
+    background-color: $fondo;
+    color: $color;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    padding: 5px 8px;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+}
+@mixin style-p($fondo,$color,$fontSize,$fontWeight,){
+    background-color: $fondo;
+    color: $color;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    padding: 5px 8px;
+    border-radius: 3px;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
