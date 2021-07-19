@@ -1,0 +1,68 @@
+.teamContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    &__teamItem{
+        text-align: center;
+        margin: 10px auto;
+        h3{
+            background-color: $secundaryColor;
+            color: $yellowColor;
+            margin: 5px 50px;
+            padding: 10px 0;
+        }
+        p{
+            background-color: $secundaryColor;
+            margin: 2px 70px;
+            padding: 10px 0;
+            color: $pinkColor;
+        }
+        img{
+            border-radius: 5px;
+            max-width: 50%;
+            min-width: 100px;
+            box-shadow: 0 0 10px $primaryColor;
+            cursor: pointer;
+        }
+    }
+    @media only screen and (min-width: 600px){
+        flex-direction: row;
+        max-width: 900px;
+        justify-content: space-between;
+    }
+}   
+.containertEvidencia{
+    margin: 20px auto 40px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__bannerUs{
+        max-width: 100%;
+    }
+    &__textUs{
+        margin: 10px;
+        max-width: 100%;
+        &__title{
+            background-color: $secundaryColor;
+            margin: 10px auto;
+            padding: 10px;
+            color: $primaryColor;
+        }
+        &__subtitle{
+            background-color: $secundaryColor;
+            padding: 30px 20px;
+        }
+    }
+    @media only screen and (min-width: 1000px){
+        flex-direction: row;
+        align-items: center;
+        &__bannerUs{
+            max-width: 400px;
+            margin-right: 10px;
+        }
+        &__textUs{
+            max-width: 600px;
+        }
+    }
+}

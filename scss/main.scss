@@ -1,0 +1,285 @@
+// Colors
+$colorTheme: #22201e;
+$themeTwo: #ffffffd6;
+$primaryColor: #4ef507;
+$secundaryColor: #101010;
+$pinkColor: #ffa6a6;
+$yellowColor: #ffe05f;
+$textColor: #fff;
+$shadowColor: #0000007b;
+// Imports
+@import "_mixin.scss";
+@import "_bannerHero.scss";
+@import "_productos.scss";
+@import "_containerNews.scss";
+@import "_productosDescuento.scss";
+@import "_team.scss";
+@import "_envios.scss";
+@import "_contact.scss";
+// base
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Source Code Pro', monospace;
+    background-image: url(../images/universePattern.png);
+    background-color: $secundaryColor;
+    color: $textColor;
+    font-size: 16px;
+    height: 100vh;
+}
+a{
+    text-decoration: none;
+    color: $textColor;
+}
+h3{
+    font-size: 1.17rem;
+}
+hr{
+    max-width: 80%;
+    margin: 50px auto;
+    color: solid 1px;
+    background-color: $primaryColor;
+    border: 0;
+    opacity: 1;
+}
+/* ----Navbar---- */
+.topheader{
+    width: 100%;
+    background-color: $secundaryColor;
+    box-shadow: 0 5px 6px $shadowColor;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    max-width: 980px;
+    margin: 0 auto;
+    &__logoBrand{
+        display: flex;
+        align-items: center;
+        img{
+            width: 140px
+        }
+        p{
+            margin: auto 10px;
+            color: $primaryColor;
+            font-size: 1.1rem;
+        }
+    }
+    &__menuList{
+        display: flex;
+        list-style: none;
+        align-items: center;
+        margin: 10px 5px;
+        li{
+            padding: 0 15px;
+        }
+        a{
+            font-size: .9rem;
+            position: relative;
+            &:hover{
+            color: $textColor;
+            }
+            &::after{
+            content: "";
+            background-color: $primaryColor;
+            position: absolute;
+            left: 0;
+            top: calc(100% + 3px);
+            width: 100%;
+            height: 2px;
+            opacity: 0;
+            transition: opacity .3s;
+            }
+        }
+        a.navbar__menuList--selected::after,
+        a:hover::after{
+            opacity: 1;
+        }
+    }
+    &__openMenu,
+    &__closeMenu{
+        display: none;
+    }
+    
+}
+@media only screen and (max-width: 950px){
+    .navbar__menuList{
+        flex-direction: column;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        background-color: $secundaryColor;
+        height: 100vh;
+        width: 100vw;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s;
+        li{
+            padding: 0;
+        }
+        a{
+            font-size: 1.5rem;
+            line-height: 80px;
+        }
+        a::after{
+            content: none;
+        }
+        a:hover,
+        a.--selected{
+            color: $primaryColor;
+        }
+    }
+    .navbar__openMenu,
+    .navbar__closeMenu{
+        display: block;
+        border: none;
+        background: none;
+        color: $textColor;
+        font-size: 2rem;
+        cursor: pointer;
+        &:focus:not(:focus-visible){
+            outline: none;
+        }
+    }
+    .navbar__closeMenu{
+        align-self: flex-end;
+        padding: 6px 26px;
+    }
+    .menuOpened{
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+@media only screen and (max-width: 350px){
+    .navbar__logoBrand p{
+        font-size: .8rem;
+    }
+}
+@media only screen and (max-width: 320px){
+    .navbar__logoBrand p{
+        display: none;
+    }
+}
+/* ----Top image---- */
+.topImage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    img{
+        max-width: 90%;
+        margin: 5px auto;
+        border-radius: 3px;
+    }
+    @media only screen and (min-width: 800px){
+        flex-direction: row;
+        justify-content: center;
+        margin: 10px auto;
+        img{
+            max-width: 90%;
+            margin: 5px 5px;
+        }
+    }
+}
+/* ----Titulos de sección---- */
+.titleSection{
+    display: flex;
+    justify-content: center;
+    &__product{
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $primaryColor;
+    background-color: $secundaryColor;
+    padding: 16px 16px;
+    }
+}
+/* ----Footer---- */
+footer{
+    background: $secundaryColor;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+}
+.containerFooter{
+    display: flex;
+    max-width: 98%;
+    margin: 10px auto;
+    flex-direction: column;
+    &__team{
+        max-width: 100%;
+        margin: 10px 10px;
+        padding: 10px 0 0 15px;
+        text-align: left;
+        h3{
+            margin-bottom: 10px;
+        }
+        p{
+            margin-bottom: 20px;
+        }
+        a{
+            color: $primaryColor;
+        }
+    }
+    &__newsletter{
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        margin: 10px 10px;
+        padding: 10px 15px;
+        text-align: left;
+        h3{
+            margin-bottom: 10px;
+        }
+        p{
+            margin-bottom: 10px;
+        }
+        input{
+            padding: 10px;
+        }
+        &::placeholder{
+            font-size: 1.1rem;
+            font-family: 'Source Code Pro', monospace;;
+        }
+        &__btn{
+            @extend .bannerHero__btn;
+            margin: 25px;
+        }
+    }
+}
+.lastContainer{
+    display: flex;
+    max-width: 1000px;
+    margin: 10px auto 10px;
+    align-items: center;
+    flex-direction: column;
+    &__logoFooter{
+        width: 120px;
+        margin: 0 0 5px;
+    }
+    &__textFooter{
+        font-size: .8rem;
+        a:hover{
+            color: $yellowColor;
+        }
+    }
+}
+@media only screen and (min-width: 700px){
+    .containerFooter{
+        display: flex;
+        max-width: 1000px;
+        margin: 10px auto;
+        flex-direction: row;
+        justify-content: center;
+        &__team{
+            max-width: 50%;
+        }
+        &__newsletter{
+            max-width: 50%;
+        }
+    }
+}

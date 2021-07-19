@@ -1,0 +1,92 @@
+.bannerHero{
+    margin: 20px auto;
+    width: 90%;
+    text-align: center;
+    &__text{
+        margin-bottom: 25px;
+        padding: 0 20px;
+    }
+    &__img{
+        width: 80%;
+        max-width: 350px;
+    }
+    &__title{
+        font-size: 1.5rem;
+        font-weight: 700;
+        background-color: $secundaryColor;
+        padding: 10px;
+        strong{
+            color: $primaryColor;
+        font-weight: 500;
+        font-size: 1.6rem;
+        }
+    }
+    &__subtitle{
+        font-size: .9rem;
+        font-weight: 500;
+        line-height: 1.5;
+        max-width: 320px;
+        margin: 5px auto;
+        background-color: $secundaryColor;
+        padding: 10px;
+    }
+    &__btn{
+        background-color: $primaryColor;
+        border: none;
+        border-radius: 2px;
+        font-size: 1.3rem;
+        font-family: 'Source Code Pro', monospace;
+        padding: 0.5em 1em;
+        cursor: pointer;
+        margin-top: 25px;
+        a{
+            color: $secundaryColor;
+        }
+    }
+    &__btn:hover{
+        filter: brightness(110%);
+        box-shadow: 0 0 10px $primaryColor;
+    }
+}
+@media only screen and (min-width: 768px){
+    .bannerHero{
+        display: flex;
+        text-align: left;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1100px;
+        padding: 20px;
+        margin: 20px auto;
+        &__text{
+            padding: 0 20px;
+        }
+        &__img{
+            width: 100%;
+            max-width: 450px;
+        }
+        &__title{
+            font-size: 2rem;
+            max-width: 600px;
+            strong{
+                font-size: 2.1rem;
+            }
+        }
+        &__subtitle{
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 5px 0;
+        }
+        &__btn{
+            font-size: 1.2rem;
+        }
+    }    
+}
+@media only screen and (min-width: 600px){
+    .bannerHero__text{
+        margin: 20px auto;
+        max-width: 500px;
+    }
+    .bannerHero__subtitle{
+        font-size: 1rem;
+    }
+}

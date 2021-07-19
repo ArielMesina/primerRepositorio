@@ -1,0 +1,49 @@
+.containerCondiciones{
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    background-color: $secundaryColor;
+    padding: 20px 20px;
+    &__textDelivery{
+        h3{
+            margin: 10px 0;
+            color: $primaryColor;
+        }
+    }
+}
+.containerTable{
+    @extend .containerCondiciones;
+    .table{
+        border-color: $primaryColor;
+        color: $textColor;
+        margin: 0 auto;
+    }
+}
+/* Preguntas frecuentes */
+.containerQuestions{
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    .accordion-button{
+        background-color: $secundaryColor;
+        color: $primaryColor;
+    }
+    .accordion-body{
+        background-color: $secundaryColor;
+    }
+    .accordion-button:not(.collapsed){
+        color: $secundaryColor;
+        background-color: $primaryColor;
+    }
+    .accordion-button:not(.collapsed)::after,
+    .accordion-button::after{
+        background-color: $textColor;
+        border-radius: 10%;
+        padding: 3px;
+    }
+    .accordion-item{
+        border: solid 1px $primaryColor;
+    }
+}

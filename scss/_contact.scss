@@ -1,0 +1,23 @@
+.containerForm{
+    max-width: 900px;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: $colorTheme;
+    .form-control{
+        border: none;
+    }
+    .btn-primary{
+        @extend .bannerHero__btn;
+        color: $secundaryColor;
+    }
+}
+.map{
+    display: flex;
+    justify-content: center;
+    iframe{
+        width: 100%;
+        max-width: 900px;
+        margin: 10px 10px;
+    }
+}
